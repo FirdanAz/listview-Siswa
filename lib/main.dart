@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:listview_flutter/listView.dart';
+import 'package:listview_flutter/tabbarList.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ListSiswa(),
+      home: TabbarExample(),
     );
   }
 }

@@ -21,9 +21,9 @@ class _ListSiswaState extends State<ListSiswa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('List Siswa'),
-      ),
+      // appBar: AppBar(
+      //   title: Text('List Siswa'),
+      // ),
       body:
       ListView.builder(
           padding: EdgeInsets.only(bottom: 20),
@@ -34,7 +34,30 @@ class _ListSiswaState extends State<ListSiswa> {
               child: Padding(
                 padding: EdgeInsets.all(0.0),
                 child: ListTile(
-                  onTap: null,
+                  onLongPress: () {
+                    showDialog<String>(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        title: const Text('Hapus Item'),
+                        content: const Text('Tekan Ok untuk Menghapus'),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () => Navigator.pop(context, 'Cancel'),
+                            child: const Text('Cancel'),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pop(context,'ok');
+                              setState(() {
+                                users.remove(list);
+                              });
+                            },
+                            child: const Text('OK'),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                   leading: CircleAvatar(
                     foregroundImage: AssetImage(list.image),
                   ),
@@ -51,3 +74,4 @@ class User{
   String name, kelas, image;
   User({required this.name, required this.kelas, required this.image});
 }
+
