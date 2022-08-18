@@ -34,6 +34,13 @@ class _ListSiswaState extends State<ListSiswa> {
               child: Padding(
                 padding: EdgeInsets.all(0.0),
                 child: ListTile(
+                  onTap: () {
+                    setState(() {
+                      SnackBar(
+                        content: Text('Nama : ' + list.name),
+                      );
+                    });
+                  },
                   onLongPress: () {
                     showDialog<String>(
                       context: context,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:listview_flutter/ListAllFootball.dart';
 import 'package:listview_flutter/listView.dart';
 import 'package:listview_flutter/tabbarList.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: TabbarExample(),
+      home: ListAllFootball(),
     );
   }
 }
