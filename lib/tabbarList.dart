@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:listview_flutter/ListAllFootball.dart';
 import 'package:listview_flutter/listView.dart';
 
 class TabbarExample extends StatefulWidget {
@@ -14,8 +15,8 @@ class _TabbarExampleState extends State<TabbarExample>
   int _selectedIndex = 0;
 
   List<Widget> list = [
-    Tab(icon: Text('Chat')),
-    Tab(icon: Text('Status')),
+    Tab(icon: Text('FootBall')),
+    Tab(icon: Text('Kontak')),
     Tab(icon: Text('Panggilan')),
   ];
 
@@ -38,21 +39,21 @@ class _TabbarExampleState extends State<TabbarExample>
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.amber,
+          backgroundColor: Colors.red,
           bottom: TabBar(
             onTap: (ListSiswa) {},
             controller: _controller,
             tabs: list,
           ),
-          title: Text('Tabs Demo'),
+          title: Center(
+            child: Text('API'),
+          ),
         ),
         body: TabBarView(controller: _controller, children: [
-          ListSiswa(),
+          ListAllFootball(),
           Center(
-              child: Text(
-                _selectedIndex.toString(),
-                style: TextStyle(fontSize: 40),
-              )),
+              child: ListSiswa(),
+              ),
           Center(
               child: Text(
                 _selectedIndex.toString(),
